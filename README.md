@@ -19,22 +19,36 @@ adding this to AUTOEXE.BAT will run the CLK.BAS at boot time and sync the softwa
 You may need to give a path if the GWBASIC and CLK.BAS files are not in the root. 
 
 CLOCK.BAS 
+
 This is a program to clear and set the hardware clock (RTC), then read the clock, and set the system clock. 
 setting the clock is done register by register from shortest to longest minutes to decades.  
 I skipped seconds S0 and S1, so aim for the next minute when setting.
 The order is :
+
 minutes, 1's    e.g. for 12:30 enter 0
+
 minutes, 10's   e.g. for 12:30 enter 3
+
 hours, 1's    e.g. for 12:30 enter 2
+
 hours 10's   ' this is a tricky one ! add 8 to make it 24hr clock.  i.e. if 2pm, 14:00:00 you enter 1+8 =9, bit 4 is used for 12/24 hr clock.
+
 Day of the week, 0 = sunday, 1 = monday etc.    
+
 day of month, 1's
+
 day of month 10's
+
 month of year, 1's  e.g. 2 for december 
+
 month of year, 10's e.g. 1 for october - November -  december
+
 2 digit year, 1s    e.g. 3 for 2023
+
 2 digit year, 10's  e.g. 2 for 2023 decade
+
 the program will set the hardware clock based on these inputs.  
+
 if the display is wrong, try again - Dont set an impossible date or time ! 
 
 Have fun playing with your Clock, 
