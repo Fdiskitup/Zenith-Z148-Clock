@@ -3,9 +3,10 @@ Files for the PZT148 real time clock
 
 I failed to find the driver software for this card by Premier Technologies Ltd - so I made a work arround using GWBASIC.
 At the heart of the clock circuit it uses an MSM58321RS 4BIT real time Clock Module so this approach may be valid for other RTC units.
-By port sniffing with GWBASIC OUT and INP and trail and error + dumb luck
-I found the ports to communicate with the hardware.  The clock enable jumper caused differences to show when reading the port.      
+By port sniffing with GWBASIC OUT and INP commands, trail and error and plain dumb luck,
+I found the ports to communicate with the hardware.  The clock enable jumper caused differences to show when reading the port, so that helped.      
 Decimal port 615 (control instructions) and port 616 (4 bit data in/out) are the ones that work with this RTC. 
+for example sending OUT 615,233 sets pin 9 (ADDRESS WRITE LATCH) to High, and this showed up on my logic probe.  
 
 CLK.BAS
 CLK.BAS reads the current hardware real time clock registers, then it manipulates the data into a format that can be used to set the dos system TIME and DATE. 
@@ -36,5 +37,6 @@ month of year, 10's e.g. 1 for october - November -  december
 the program will set the hardware clock based on these inputs.  
 if the display is wrong, try again - Dont set an impossible date or time ! 
 
+Have fun playing with your Clock, 
 
-
+MAS 12/16/2022 
