@@ -31,7 +31,7 @@ minutes, 10's   e.g. for 12:30 enter 3
 
 hours, 1's    e.g. for 12:30 enter 2
 
-hours 10's   ' this is a tricky one ! add 8 to make it 24hr clock.  i.e. if 2pm, 14:00:00 you enter 1+8 =9, bit 4 is used for 12/24 hr clock.
+hours 10's   ' this is a tricky one ! add 8 to make it 24hr clock.  i.e. if 2pm, 14:00:00 you enter 1+8 =9, bit 4 is used for 12/24 hr clock flag.
 
 Day of the week, 0 = sunday, 1 = monday etc.    
 
